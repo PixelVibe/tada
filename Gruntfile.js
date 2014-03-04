@@ -96,14 +96,6 @@ module.exports = function(grunt)
       }
     },
 
-    // Set readme template
-    // Issue #56 - github
-    readme: {
-      options: {
-        reasdme: 'docs/README.tmpl.md' // readme - check issue #56
-      }
-    },
-
     // Watcher
     watch: {
         stylus:{
