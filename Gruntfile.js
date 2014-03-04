@@ -77,44 +77,25 @@ module.exports = function(grunt)
       }
     },
 
-    // Set readme template
-    // Issue #56 - github
-    readme: {
-      options: {
-        readme: 'docs/README.tmpl.md'
-      }
-    },
-
-     // Keep in sync js scripts from source to bin
     sync: {
-      main: {
+      devToBin: {
+        // files: [{src: ['src/app/**', 'src/assets/**', 'src/html/**', '!src/assets/styles/**'], dest: bin_dir}]
         files:
         [{
-          cwd: 'src/assets/scripts',
-          src: '**',
-          dest: bin_scripts
-        }],
-        [{
-          cwd: 'src/assets/images',
-          src: '**',
-          dest: 'bin_images'
+          cwd: 'src',
+          src: ['app/**', 'assets/**', 'html/*.html', '!assets/styles/*.styl'],
+          dest: 'bin'
         }]
       }
     },
 
-    /* CONFIG REQUIRED */
-    // Remove console.log() statements
-    removelogging: {
-        dist: {
-          src: ['src/app/*.js', 'src/assets/scripts/*.js'],
-          dest: "js/application-clean.js",
-
-          options: {
-            // see below for options. this is optional.
-          }
-        }
+    // Set readme template
+    // Issue #56 - github
+    readme: {
+      options: {
+        reasdme: 'docs/README.tmpl.md' // readme - check issue #56
       }
-    }),
+    },
 
     // Watcher
     watch: {
@@ -131,7 +112,7 @@ module.exports = function(grunt)
         {
           files: ['src/**'],
           tasks: 'sync'
-        }
+        },
         livereload: {
             options: { livereload: true },
             files: [bin_styles + '*.css', bin_scripts + '*.js', 'static/*.html', '*.php', 'templates/*.php', bin_images + '**/*.*']
@@ -147,9 +128,9 @@ module.exports = function(grunt)
   grunt.registerTask('devwatch', ['watch']);
   
   // Bin building prior to dev
-  grunt.registerTask('binbuild', ['stylus:bin']);
+  grunt.registerTask('binbuild', ['sync']);
   
   // Build readme file
-  grunt.registerTask('binbuild', ['readme']);
+  grunt.registerTask('breadme', ['readme']);
 
 };

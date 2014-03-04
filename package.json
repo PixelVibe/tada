@@ -33,6 +33,7 @@
     "grunt-remove-logging": "^0.2.0",
     "load-grunt-tasks": "^0.1.0",
     "grunt-contrib-jshint": "^0.8.0",
-    "grunt-sync": "0.0.5"
+    "grunt-sync": "0.0.5",
+    "grunt-mkdir": "^0.1.1"
   }
 }
