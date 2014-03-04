@@ -33,7 +33,7 @@ module.exports = function(grunt)
         options:
         {
           compress: false,
-          linenos: true
+          use: [require('jeet', 'nib')],
         },
         /*files:
         [{
@@ -117,7 +117,7 @@ module.exports = function(grunt)
         },
         synctobin:
         {
-          files: ['src/**/'],
+          files: ['src/**'],
           tasks: 'sync'
         },
         livereload: {
@@ -139,6 +139,5 @@ module.exports = function(grunt)
   
   // Build readme file
   grunt.registerTask('breadme', ['readme']);
-  grunt.registerTask('poutses', ['stylus:bin']);
 
 };

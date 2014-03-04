@@ -1,0 +1,83 @@
+//  Imports
+// ============================================== //
+@import url(http://fonts.googleapis.com/css?family=Open\+Sans:400italic,400,300,700&subset=latin,greek);
+
+//  Variables
+// ============================================== //
+
+// Root font setup
+ff  = 'Open Sans', sans-serif
+fs  = 14px
+lh  = 1em
+clr = #000
+
+// Colors for labels, badges and messages
+warning = red
+alert   = yellow
+success = green
+
+
+//  Basic
+// ============================================== //
+.left
+  float left
+
+.right
+  float right
+
+body
+  font normal (fs\/lh) ff
+  color clr
+
+
+//  Information Labels, Badges & Messages
+// ============================================== //
+
+// Labels
+.label
+  display inline
+  padding .3em
+  background-color #FFF
+  color #000
+  &.label-warning
+    background-color warning
+  &.label-alert
+    background-color alert
+  &.label-success
+    background-color success
+
+// Badges
+.badge
+  display inline-block
+  min-width 10px
+  padding 3px 7px
+  font-size 12px
+  font-weight bold
+  line-height 1
+  color #fff
+  text-align center
+  white-space nowrap
+  vertical-align baseline
+  background-color #999
+  border-radius 10px
+  &.badge-warning
+    background-color warning
+  &.badge-alert
+    background-color alert
+  &.badge-success
+    background-color success
+
+
+//  Utilities
+// ============================================== //
+.clearfix
+  zoom: 1
+  &:before, &:after
+    content '\0020'
+    display block
+    overflow hidden
+    visibility hidden
+    width 0
+    height 0
+  &:after
+    clear both
