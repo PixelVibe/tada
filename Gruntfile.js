@@ -33,15 +33,22 @@ module.exports = function(grunt)
         options:
         {
           compress: false,
-          linenos: true,
+          linenos: true
         },
-        files:
+        /*files:
         [{
-          cwd: 'src/assets/styles/',
-          src: [ '*.styl' ],
-          dest: 'bin/assets/styles/',
+          cwd: 'src/assets/styles',
+          src: 'layout.styl',
+          dest: 'bin/assets/styles',
           ext: '.css'
-        }]
+        }]*/
+        files:
+        {
+          'bin/assets/styles/layout.css' : 'src/assets/styles/layout.styl',
+          'bin/assets/styles/main.css' : 'src/assets/styles/main.styl',
+          'bin/assets/styles/mq.css' : 'src/assets/styles/mq.styl',
+          'bin/assets/styles/reset.css' : 'src/assets/styles/reset.styl'
+        }
       },
       dist:
       {
@@ -83,7 +90,7 @@ module.exports = function(grunt)
         files:
         [{
           cwd: 'src',
-          src: ['app/**', 'assets/**', 'html/*.html', '!assets/styles/*.styl'],
+          src: ['app/**', 'assets/**', 'html/**', '!assets/styles/*.styl'],
           dest: 'bin'
         }]
       }
@@ -110,7 +117,7 @@ module.exports = function(grunt)
         },
         synctobin:
         {
-          files: ['src/**'],
+          files: ['src/**/'],
           tasks: 'sync'
         },
         livereload: {
@@ -132,5 +139,6 @@ module.exports = function(grunt)
   
   // Build readme file
   grunt.registerTask('breadme', ['readme']);
+  grunt.registerTask('poutses', ['stylus:bin']);
 
 };
