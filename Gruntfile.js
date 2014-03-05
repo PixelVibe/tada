@@ -103,7 +103,7 @@ module.exports = function(grunt)
           generate_title: false,
           informative: true,
           h1: "#",
-          h2: "##",
+          h2: "##"
         },
         order:
         {
