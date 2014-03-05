@@ -16,7 +16,8 @@
         <link rel="stylesheet" href="../assets/styles/mq.css">
         
         <!-- font awesome icons from bootstrap cdn -->
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
+        <link href="//code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css" rel="stylesheet">
         
     </head>
     <body>
@@ -27,28 +28,28 @@
         <div class="layout-wrapper fluid">
 
         <header>
-            <div class="logo left">
+            <div class="logo">
                 <a href="/">TADA!!!</a>
             </div> <!-- logo -->
-            <div class="header-nav left">
+            <div class="header-nav">
                 <div class="toggle_nav">Toggle Navigation</div>
-                <div class="mini-notifications right">
+                <div class="mini-notifications clearfix">
                     <ul>
                         <li class="notify-alerts">
-                            <a href="#"><i class="fa fa-warning"></i><span class="label label-warning">4</span></a>
+                            <a href="#"><i class="ion ion-alert-circled"></i><span class="badge badge-warning">4</span></a>
                         </li> <!-- new alerts notification -->
                         <li class="notify-tasks">
-                            <a href="#"><i class="fa fa-check"><span class="label label-alert">4</span></i></a>
+                            <a href="#"><i class="ion ion-checkmark"><span class="badge badge-alert">4</span></i></a>
                         </li> <!-- new tasks notification -->
                         <li class="notify-messages">
-                            <a href="#"><i class="fa fa-envelope"><span class="label label-success">4</span></i></a>
+                            <a href="#"><i class="ion ion-ios7-email"><span class="badge badge-success">4</span></i></a>
                         </li> <!-- new messages notification -->
                     </ul>
                 </div> <!-- top bar notification system / dropdown -->
             </div> <!-- header navigation & notification -->
         </header> <!-- header -->
 
-        <div id="main-body">
+        <div id="main-body" class="clearfix">
             <aside class="left-sidebar">
                 <section class="sidebar">
                     <div class="user-info"></div> <!-- user information, name, photo -->
@@ -58,8 +59,7 @@
                             <ul>
                                 <li><a href="#">Dashboard</a></li>
                                 <li>
-                                    <a href="#">Tasks</a>
-                                    <span class="badge badge-warning">4</span>
+                                    <a href="#">Tasks<span class="badge badge-warning">4</span><span class="badge badge-alert">4</span></a>
                                 </li>
                                 <li><a href="#">Messages</a></li>
                                 <li><a href="#">Calendar</a></li>
@@ -69,7 +69,98 @@
                     </div> <!-- main navigation -->
                 </section>
             </aside> <!-- .left-sidebar -->
-            <aside class="right-sidebar"></aside> <!-- main content / .right-sidebar -->
+            <aside class="right-sidebar">
+                <div class="task-pools">
+                    
+                    <div class="must-do task-pool">
+                        <div class="inner">
+                            <h3>Must Do</h3>
+                            <ul class="todo-list">
+                                <li class="tasks-group">
+                                    <h4>Project name</h4>
+                                    <ul class="task-list">
+                                        <li>Do something</li>
+                                        <li>Do something else</li>
+                                        <li>Do something more</li>
+                                        <li>Just do it</li>
+                                    </ul>
+                                </li>
+                                <li class="tasks-group">
+                                    <h4>Project name</h4>
+                                    <ul class="task-list">
+                                        <li>Do something</li>
+                                        <li>Do something else</li>
+                                        <li>Do something more</li>
+                                        <li>Just do it</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                    </div> <!-- the must do tasks pool -->
+
+                    <div class="will-do task-pool">
+                        <div class="inner">
+                            <h3>Will Do</h3>
+                            <ul class="todo-list">
+                                <li class="tasks-group">
+                                    <h4>Project name</h4>
+                                    <ul class="task-list">
+                                        <li>Do something</li>
+                                        <li>Do something else</li>
+                                        <li>Do something more</li>
+                                        <li>Just do it</li>
+                                    </ul>
+                                </li>
+                                <li class="tasks-group">
+                                    <h4>Project name</h4>
+                                    <ul class="task-list">
+                                        <li>Do something</li>
+                                        <li>Do something else</li>
+                                        <li>Do something more</li>
+                                        <li>Just do it</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                    </div> <!-- the will do tasks -->
+
+                    <div class="todo task-pool">
+                        <div class="inner">
+                            <h3>To Do</h3>
+                            <ul class="todo-list">
+                                <li class="tasks-group">
+                                    <h4>Project name</h4>
+                                    <ul class="task-list">
+                                        <li>Do something</li>
+                                        <li>Do something else</li>
+                                        <li>Do something more</li>
+                                        <li>Just do it</li>
+                                    </ul>
+                                </li>
+                                <li class="tasks-group">
+                                    <h4>Project name</h4>
+                                    <ul class="task-list">
+                                        <li>Do something</li>
+                                        <li>Do something else</li>
+                                        <li>Do something more</li>
+                                        <li>Just do it</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                    </div> <!-- the todo someday tasks -->
+
+                </div> <!-- task pools -->
+            </aside> <!-- main content / .right-sidebar -->
         </div> <!-- Main Body - Content goes here - 2 columns -->
 
         <footer></footer>

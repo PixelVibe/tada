@@ -16,7 +16,11 @@
     "task",
     "manager"
   ],
-  "author": "Nikos Kapatos",
+  "author": {
+    "name": "Nikos Kapatos",
+    "email": "kapatosn@gmail.com",
+    "url": "www.pixelvibe.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/PixelVibe/tada/issues"

@@ -11,7 +11,7 @@
 
 ## TADA Structure and features
 - Dashboard
-  - 3 Colored boxes like pools where someone can drag tasks. Must do (urgent, today, next in the list), Will Do (in the week, sometime in the future), To do? (List of will see what and when)
+  +- 3 Colored boxes like pools where someone can drag tasks. Must do (urgent, today, next in the list), Will Do (in the week, sometime in the future), To do? (List of will see what and when)
   - Statistics (might use graph) for open projects/total project
   - calendar (maybe)
   - events for collaborated projects or open tickets

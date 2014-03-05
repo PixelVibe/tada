@@ -5,73 +5,182 @@
 //  Variables
 // ============================================== //
 
-// Root font setup
+// Global font setup
 ff  = 'Open Sans', sans-serif
 fs  = 14px
 lh  = 1em
 clr = #000
 
-// Colors for labels, badges and messages
-warning = red
-alert   = yellow
-success = green
+// Theme Background Colors
+bg-gray       = #eaeaec !important
+bg-black      = #222222 !important
+bg-red        = #f56954 !important
+bg-yellow     = #f39c12 !important
+bg-aqua       = #00c0ef !important
+bg-blue       = #0073b7 !important
+bg-light-blue = #3c8dbc !important
+bg-green      = #00a65a !important
+bg-navy       = #001f3f !important
+bg-teal       = #39cccc !important
+bg-olive      = #3d9970 !important
+bg-lime       = #01ff70 !important
+bg-orange     = #ff851b !important
+bg-fuchsia    = #f012be !important
+bg-purple     = #932ab6 !important
+bg-maroon     = #85144b !important
+
+// Theme Text Colors
+text-red        = #f56954 !important
+text-yellow     = #f39c12 !important
+text-aqua       = #00c0ef !important
+text-blue       = #0073b7 !important
+text-light-blue = #3c8dbc !important
+text-green      = #00a65a !important
+text-navy       = #001f3f !important
+text-teal       = #39cccc !important
+text-olive      = #3d9970 !important
+text-lime       = #01ff70 !important
+text-orange     = #ff851b !important
+text-fuchsia    = #f012be !important
+text-purple     = #932ab6 !important
+text-maroon     = #85144b !important
+
+// Labels & Badges Colors
+badge-warning = #E32600 !important
+badge-success = #08A800 !important
+badge-alert   = #F0E000 !important
+badge-info    = #079DDE !important
+
+
+
+//  Mixins
+// ============================================== //
+// Gradient
+gradient(cs, ce, os, oe)
+  background cs
+  background -moz-linear-gradient(top,  cs os, ce oe)
+  background -webkit-gradient(linear, left top, left bottom, color-stop(os,cs), color-stop(oe,ce))
+  background -webkit-linear-gradient(top,  cs os,ce oe)
+  background -o-linear-gradient(top,  cs os,ce oe)
+  background -ms-linear-gradient(top,  cs os,ce oe)
+  background linear-gradient(to bottom,  cs os,ce oe)
+  //filter progid:DXImageTransform\.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 )
+
+// Border Radius
+border-radius(rad)
+  border-radius rad
+  -moz-border-radius rad
+  -webkit-border-radius rad
 
 
 //  Basic
 // ============================================== //
-.left
-  float left
-
-.right
-  float right
-
 body
   font normal (fs\/lh) ff
   color clr
+  background #222 url(../images/linen.png) repeat 0 0
 
 
-//  Information Labels, Badges & Messages
+// Header
+// ============================================== //
+.logo
+  float left
+
+.header-nav
+  float right
+
+.mini-notifications
+  float right
+  ul,li
+    margin 0
+    padding 0
+    list-style none
+  li
+    float left
+  .badge
+    border-radius(50%)
+    min-width 10px
+    padding .3em .4em
+    font-size 11px
+    font-weight normal
+    line-height 1
+    color #FFF
+    margin 0.65em
+
+// Main Navigation
+// ============================================== //
+.main-navigation
+  ul, li
+    padding 0
+    margin 0
+    list-style none
+  a
+    border-top 1px solid #4d4d4d
+    border-bottom 1px solid #0d0d0d
+    border-left none
+    color #ddd
+    display block
+    gradient(#404040, #333333, 0%, 100%)
+    font-weight normal
+    font-size 1em
+    line-height 2.5em
+    padding 0em .25em
+    margin-bottom 0px
+    text-shadow none
+    text-transform none
+    .badge
+      border-radius(10%)
+      min-width 10px
+      padding .2em .6em
+      font-size 12px
+      font-weight bold
+      line-height 1
+      margin .80em .25em
+      float right
+      
+
+// Dashboard
 // ============================================== //
 
-// Labels
-.label
-  display inline
-  padding .3em
-  background-color #FFF
-  color #000
-  &.label-warning
-    background-color warning
-  &.label-alert
-    background-color alert
-  &.label-success
-    background-color success
+// Task Pools
+.task-pool
+  position relative
+  border-radius(2px)
+  margin-bottom 15px
+  color #FFF
+
+.task-pools
+  .must-do
+    background-color bg-red
+  .will-do
+    background-color bg-yellow
+  .todo
+    background-color bg-aqua
+
+
+// Information Labels, Badges & Messages
+// ============================================== //
 
 // Badges
 .badge
   display inline-block
-  min-width 10px
-  padding 3px 7px
-  font-size 12px
-  font-weight bold
-  line-height 1
-  color #fff
   text-align center
   white-space nowrap
   vertical-align baseline
   background-color #999
-  border-radius 10px
   &.badge-warning
-    background-color warning
+    background-color badge-warning
   &.badge-alert
-    background-color alert
+    background-color badge-alert
+    color #000
   &.badge-success
-    background-color success
+    background-color badge-success
 
 
 //  Utilities
 // ============================================== //
 .clearfix
-  zoom: 1
+  zoom 1
   &:before, &:after
     content '\0020'
     display block

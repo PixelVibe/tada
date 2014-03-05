@@ -102,17 +102,15 @@ module.exports = function(grunt)
           github_username: "PixelVibe",
           generate_title: false,
           informative: true,
-          h1: "#",
-          h2: "##"
         },
         order:
         {
-          "header.md": "Tada!",
-          "overview.md": "Overview",
+          "header.md":       "Tada!",
+          "overview.md":     "Overview",
           "installation.md": "Installation",
-          "features.md": "Features",
-          "development.md": "Development",
-          "licence.md": "Licence"
+          "features.md":     "Features",
+          "development.md":  "Development",
+          "licence.md":      "Licence"
         }
       }
     },
