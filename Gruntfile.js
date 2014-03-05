@@ -105,7 +105,7 @@ module.exports = function(grunt)
         jscheck:
         {
           files: ['src/assets/scripts/*.js', 'src/app/**/*.js'],
-          task:  'jshint:devToBin'
+          tasks:  'jshint:devToBin'
         },
         synctobin:
         {
