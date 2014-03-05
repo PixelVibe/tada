@@ -35,13 +35,6 @@ module.exports = function(grunt)
           compress: false,
           use: [require('jeet', 'nib')],
         },
-        /*files:
-        [{
-          cwd: 'src/assets/styles',
-          src: 'layout.styl',
-          dest: 'bin/assets/styles',
-          ext: '.css'
-        }]*/
         files:
         {
           'bin/assets/styles/layout.css' : 'src/assets/styles/layout.styl',
@@ -86,13 +79,41 @@ module.exports = function(grunt)
 
     sync: {
       devToBin: {
-        // files: [{src: ['src/app/**', 'src/assets/**', 'src/html/**', '!src/assets/styles/**'], dest: bin_dir}]
         files:
         [{
           cwd: 'src',
           src: ['app/**', 'assets/**', 'html/**', '!assets/styles/*.styl'],
           dest: 'bin'
         }]
+      }
+    },
+
+    readme_generator:
+    {
+      main:
+      {
+        options:
+        {
+          readme_folder: "docs",
+          output: "README.md",
+          table_of_contents: true,
+          generate_changelog: true,
+          changelog_folder: "docs/changelogs",
+          github_username: "PixelVibe",
+          generate_title: false,
+          informative: true,
+          h1: "#",
+          h2: "##",
+        },
+        order:
+        {
+          "header.md": "Tada!",
+          "overview.md": "Overview",
+          "installation.md": "Installation",
+          "features.md": "Features",
+          "development.md": "Development",
+          "licence.md": "Licence"
+        }
       }
     },
 
@@ -130,6 +151,6 @@ module.exports = function(grunt)
   grunt.registerTask('binbuild', ['sync']);
   
   // Build readme file
-  grunt.registerTask('breadme', ['readme']);
+  grunt.registerTask('breadme', ['readme_generator']);
 
 };

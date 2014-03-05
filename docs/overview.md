@@ -1,1 +1,5 @@
-TADAAAAA!!!!
+# Purpose
+
+## Stack
+
+## Build
